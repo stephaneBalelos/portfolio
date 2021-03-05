@@ -1,0 +1,90 @@
+.btn {
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 18px 40px;
+    i {
+        margin-right: 5px;
+    }
+
+    &:focus {
+        box-shadow: none;
+    }
+
+    &.btn-primary {
+        background-color: $gold-color;
+        color: $white-color;
+        border: none;
+
+        &:not(:disabled):active {
+            background-color: $gold-color;
+        }
+
+        &:hover {
+            background-color: darken($color: $gold-color, $amount: 10%)
+        }
+
+        &:focus {
+            background-color: darken($color: $gold-color, $amount: 15%);
+            box-shadow: 0 0 0 0.2rem darken($color: $gold-color, $amount: 5%);
+        }
+        &:active {
+            background-color: darken($color: $gold-color, $amount: 15%);
+            box-shadow: 0 0 0 0.2rem darken($color: $gold-color, $amount: 5%);
+        }
+    }
+
+    &.btn-outline-primary:not(:disabled) {
+        border-color: $primary-color;
+        color: $primary-color;
+
+        &:hover {
+            border-color: darken($color: $primary-color, $amount: 10%);
+            background-color: $primary-color;
+            color: $dark-color;
+        };
+
+        &:active {
+            border-color: darken($color: $primary-color, $amount: 10%);
+            background-color: $primary-color;
+            color: $dark-color;
+        }
+
+        &:focus {
+            border: 2px;
+            border-color: darken($color: $primary-color, $amount: 10%);
+            background-color: $primary-color;
+            color: $dark-color;
+        }
+    }
+
+    &.btn-secondary {
+        background-color: $secondary-color;
+        border: none;
+        color: #2f2f2f;
+        
+        &:hover {
+            background-color: darken($color: $white-color, $amount: 10%)
+        };
+    }
+
+    &.btn-outline-secondary {
+        border-color: $secondary-color;
+        color: $secondary-color;
+
+        &:hover {
+            border-color: darken($color: $secondary-color, $amount: 10%);
+            background-color: $secondary-color;
+            color: $dark-color;
+        };
+    }
+
+    &.btn-link {
+        padding: 5px 0;
+        color: $dark-color;
+        text-decoration: none;
+        &:hover {
+            color: darken($color: $dark-color, $amount: 20%);
+        }
+    }
+}
