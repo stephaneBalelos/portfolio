@@ -108,9 +108,9 @@ const Home = ({projects}) => {
                       <div className="col-md-8 my-auto">
                         <div className="row">
                           <div className="col-md-5 mt-3">
-                          <button className="btn btn-block btn-lg btn-secondary">
+                          <a href="mailto:hello@stephanedondyas.dev" className="btn btn-block btn-lg btn-secondary">
                             <i className="far fa-envelope"></i> Email me
-                          </button>
+                          </a>
                           </div>
                           <div className="col-md-7 mt-3">
                           <button className="btn btn-block btn-lg btn-outline-secondary">

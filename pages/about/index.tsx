@@ -27,9 +27,9 @@ const About = () => {
 
                         <p>
                             Email me: <br/>
-                            <button className="btn btn-link">
-                                hello@stephane.dondyas.ga
-                            </button>
+                            <a className="btn btn-link" href="mailto:hello@stephanedondyas.dev">
+                                hello@stephanedondyas.dev
+                            </a>
                         </p>
 
                         <div>
@@ -78,13 +78,13 @@ const About = () => {
                     <div className="row">
                         <div className="col-md-6">
                             <h1>Thanks for contacting me!</h1>
-                            <p>You can fill the form or <a className="btn btn-link" href="mailto:hello@stephane.dondyas.ga"> send me a mail </a></p>
+                            <p>You can fill the form or <a className="btn btn-link" href="mailto:hello@stephanedondyas.dev"> send me a mail </a></p>
                             <ul className="list-unstyled mt-auto">
                                 <li>
                                     <p><i className="fas fa-mobile"></i> +491789121487</p>
                                 </li>
                                 <li>
-                                    <p><i className="fas fa-envelope"></i> hello@stephane.dondyas.ga</p>
+                                    <p><i className="fas fa-envelope"></i> hello@stephanedondyas.dev</p>
                                 </li>
                                 <li>
                                     <p><i className="fas fa-map-marker"></i> Weserstraße 108, 26382 Wilhelmshaven</p>
