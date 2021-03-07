@@ -11,7 +11,7 @@ const Home = ({projects}) => {
   const metaConfig: MetaConfig = {
     title: "Hi, I'm Stephane Dondyas, a Fullstack web developer",
     description: "Welcome to my portfolio ! I'm Stephane Dondyas a Fullstack developper based in Wilhelmshaven, Germany. Here I would like to introduce myself, and show you how can I help you with your next web project!",
-    image: "/images/avatar.jpg"
+    image: "/images/me-seo.jpeg"
   }
   return (
     <>
@@ -25,19 +25,19 @@ const Home = ({projects}) => {
               <h4>Hey,</h4>
               <h1 className="mb-5">I'm <span className="text-primary">Stephane Dondyas</span> <br/> a Fullstack Javascript Dev</h1>
               <p>
-                Self Taught web developper dev, based in Wilhelmshaven, Germany <br/>
+                Self Taught web developper dev, based in Wilhelmshaven, Germany. <br/>
                 My motto: "With code, there is always a way to reach your goal."
               </p>
               <div className="d-flex align-items-center mt-3">
                 <p className="m-0">Follow me:</p>
-                <a className="ml-5" href="">
-                  <i className="fab fa-instagram fa-2x"></i>
+                <a className="ml-5" href="https://github.com/stephaneBalelos" target="_blank">
+                  <i className="fab fa-github fa-2x"></i>
                 </a>
-                <a className="ml-5" href="">
-                  <i className="fab fa-instagram fa-2x"></i>
+                <a className="ml-5" href="https://www.facebook.com/profile.php?id=100007499687543" target="_blank">
+                  <i className="fab fa-facebook-f fa-2x"></i>
                 </a>
-                <a className="ml-5" href="">
-                  <i className="fab fa-instagram fa-2x"></i>
+                <a className="ml-5" href="https://twitter.com/SDondyas" target="_blank">
+                  <i className="fab fa-twitter fa-2x"></i>
                 </a>
               </div>
               <div className="mt-5">
@@ -45,7 +45,7 @@ const Home = ({projects}) => {
               </div>
             </div>
             <div className={'col-sm-6 d-none d-sm-block ' + styles.header_img}>
-              <img className="img-fluid" src="/images/main.svg" alt=""/>
+              <img className="img-fluid" src="/images/header-img.svg" alt=""/>
             </div>
           </div>
         </section>
@@ -53,7 +53,7 @@ const Home = ({projects}) => {
           <div className={styles.card_skill}>
             <div className="row">
               <div className="col-md-5">
-                <img className="img-fluid" src="/images/exemple-photo-1.svg" alt=""/>
+                <img className="img-fluid" src="/images/vertical-me.svg" alt=""/>
               </div>
               <div className="my-4 col-md-7 d-flex flex-column justify-content-center">
                 <h1>What can I do for you?</h1>
@@ -61,15 +61,15 @@ const Home = ({projects}) => {
                 <ul className="list-unstyled">
                   <li>
                     <h4 className="m-0">I Design your website</h4>
-                    <p>I can prototype and Design your Frontends</p>
+                    <p>I can prototype and Design your Frontends using Figma</p>
                   </li>
                   <li>
                     <h4 className="m-0">I code your designs</h4>
-                    <p>I can build your Frontend with NextJs, Angular 2+, or without framworks.</p>
+                    <p>I can build your Frontend with NextJs, Angular 2+, or without frameworks.</p>
                   </li>
                   <li>
                     <h4 className="m-0">And Your Backend</h4>
-                    <p>I can build your Backend Rest API using NodeJs</p>
+                    <p>I can build your Backend Rest API using NodeJs.</p>
                   </li>
                 </ul>
               </div>
@@ -79,8 +79,8 @@ const Home = ({projects}) => {
         <section className="container">
           <div className="d-flex justify-content-between align-items-center">
             <div>
-              <h1>I don't have a CV</h1>
-              <p>As I said above, I'm a self taught Developper. So there are some project to prove my Skills.</p>
+              <h1>Recent projects</h1>
+              <p>Some projects I have been working on.</p>
             </div>
             <button className="btn btn-primary d-none d-md-block">
               See more
@@ -97,7 +97,6 @@ const Home = ({projects}) => {
           </div>
         </section>
         <section className="container">
-          <h1 className="text-center">Why Hire Me ?</h1>
           <div className="row mt-3">
             <div className="col-12">
               <CardPlain color="gold">
@@ -126,8 +125,8 @@ const Home = ({projects}) => {
             </div>
           </div>
         </section>
-        <section className="testimonials bg-blue">
-          <h1 className="text-center">Here are my happy Clients</h1>
+        {/* <section className="testimonials bg-blue">
+          <h1 className="text-center">Here are some happy Clients</h1>
           <div className="container mt-5">
           <div className="row">
             <div className="col-md-6 mt-3">
@@ -138,7 +137,7 @@ const Home = ({projects}) => {
                       <p>One of the best additions to our feedback loop has been the company-wide adoption of Fellow.</p>
                     </blockquote>
                     <figcaption className="blockquote-footer">
-                      Someone famous in <cite title="Source Title">Source Title</cite>
+                      Boris Wilson Zue Obame <cite title="Source Title">TBG Gabon</cite>
                     </figcaption>
                   </figure>
                 </div>
@@ -160,7 +159,7 @@ const Home = ({projects}) => {
             </div>
           </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </>
   )

@@ -69,7 +69,9 @@ const Navbar = () => {
       <motion.nav animate={navTransition} variants={navbarVariants} className="navigation-bar">
         <div className="container">
           <div className="navigation-content">
-            <a className="navbar-brand" href="#">Stephane Dondyas</a>
+            <Link href="/">
+              <a className="navbar-brand" href="">Stephane Dondyas</a>
+            </Link>
             <button type="button" className="btn btn-outline-primary btn-menu" onClick={() => setNavstate(!navOpen)}>Menu</button>
           </div>
           <motion.ul

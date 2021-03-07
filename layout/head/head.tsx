@@ -4,6 +4,7 @@ export interface MetaConfig {
     title: string
     description: string
     image: string
+    url?: string
 }
 
 export const CustomHead = ({metaConfig}: {metaConfig: MetaConfig}) => {
@@ -20,13 +21,14 @@ export const CustomHead = ({metaConfig}: {metaConfig: MetaConfig}) => {
             <meta name="description" content={metaConfig.description} />
 
             <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://stephanedondyas.io" />
+            <meta property="og:url" content="https://stephane.dondyas.ga" />
             <meta property="og:title" content={metaConfig.title} />
             <meta property="og:description" content={metaConfig.description} />
             <meta property="og:image" content={metaConfig.image} />
 
 
             <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:creactor" content="@SDondyas" />
             <meta property="twitter:url" content="https://stephanedondyas.io" />
             <meta property="twitter:title" content={metaConfig.title} />
             <meta property="twitter:description" content={metaConfig.description} />

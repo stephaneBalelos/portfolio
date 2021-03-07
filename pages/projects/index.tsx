@@ -6,19 +6,18 @@ import { formatApiResponse } from "../../utils/format-response";
 
 const Projects = ({projects}) => {
     projects = JSON.parse(projects)
-    console.log(projects)
     const metaConfig: MetaConfig = {
         title: "A few projects I have been working on.",
         description: "Here are some projects I have been working on.",
-        image: "/images/avatar.jpg"
+        image: "/images/me-seo.jpeg"
     }
     return (
         <>
             <CustomHead metaConfig={metaConfig}></CustomHead>
             <main role="main">
                 <section className="container">
-                    <h1>My projects</h1>
-                    <p>Or what I do on my free time :)</p>
+                    <h1>Some projects I have been working on.</h1>
+                    <p>And what I do on my free time :)</p>
                     <div className="row mt-5">
                         {
                             projects.map((p) => (

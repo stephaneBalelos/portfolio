@@ -5,7 +5,7 @@ const About = () => {
     const metaConfig: MetaConfig = {
         title: "About me | Stephane Dondyas",
         description: "I'm a Self taught Fullstack Javascript developper based in Wilhelmshaven, Germany. I can help you with your web project, from first design to production deployment",
-        image: "/images/avatar.jpg"
+        image: "/images/me-seo.jpeg"
     }
     return (
         <>
@@ -14,7 +14,7 @@ const About = () => {
             <section className="container">
                 <div className="row">
                     <div className="col-md-5 mx-auto">
-                        <img className="img-fluid" src="/images/exemple-photo-1.svg" alt=""/>
+                        <img className="img-fluid" src="/images/vertical-me.svg" alt="Stephane Dondyas"/>
                     </div>
                     <div className="col-md-7 my-auto">
                         <h1>Stephane Dondyas</h1>
@@ -28,17 +28,17 @@ const About = () => {
                         <p>
                             Email me: <br/>
                             <button className="btn btn-link">
-                                hello@stephanedondyas.ga
+                                hello@stephane.dondyas.ga
                             </button>
                         </p>
 
                         <div>
                             <h5>Key Skills</h5>
                             <div>
-                                <img className="mr-5" height="60px" src="/logos/nodejs.svg" alt=""/>
-                                <img className="mr-5" height="60px" src="/logos/next-js.svg" alt=""/>
-                                <img className="mr-5" height="60px" src="/logos/angular.svg" alt=""/>
-                                <img className="mr-5" height="60px" src="/logos/sass.svg" alt=""/>
+                                <img className="mr-5" height="60px" src="/logos/nodejs.svg" alt="NodeJS"/>
+                                <img className="mr-5" height="60px" src="/logos/next-js.svg" alt="NextJS"/>
+                                <img className="mr-5" height="60px" src="/logos/angular.svg" alt="Angular 2+"/>
+                                <img className="mr-5" height="60px" src="/logos/sass.svg" alt="Saas"/>
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@ const About = () => {
                 </p>
                 <hr/>
             </article>
-            <section className="container pt-2">
+            {/* <section className="container pt-2">
                 <h1 className="text-center">My colabs</h1>
                 <div className="row mt-3">
                     <div className="col-md-4">
@@ -72,19 +72,19 @@ const About = () => {
                         <CardUser></CardUser>
                     </div>
                 </div>
-            </section>
+            </section> */}
             <section className="bg-blue">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6">
-                            <h1>I have been waiting for you!</h1>
-                            <p>You can fill the form or <a className="btn btn-link" href="mailto:hello@stephanedondyas.ga"> send me a mail </a></p>
+                            <h1>Thanks for contacting me!</h1>
+                            <p>You can fill the form or <a className="btn btn-link" href="mailto:hello@stephane.dondyas.ga"> send me a mail </a></p>
                             <ul className="list-unstyled mt-auto">
                                 <li>
                                     <p><i className="fas fa-mobile"></i> +491789121487</p>
                                 </li>
                                 <li>
-                                    <p><i className="fas fa-envelope"></i> hello@stephanedondyas.ga</p>
+                                    <p><i className="fas fa-envelope"></i> hello@stephane.dondyas.ga</p>
                                 </li>
                                 <li>
                                     <p><i className="fas fa-map-marker"></i> Weserstraße 108, 26382 Wilhelmshaven</p>
