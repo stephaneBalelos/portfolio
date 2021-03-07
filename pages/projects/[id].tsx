@@ -2,14 +2,19 @@ import axios from 'axios';
 import { GetServerSideProps } from 'next';
 import ReactMarkdown from 'react-markdown';
 import { Project } from '../../interfaces/project';
-import { CustomHead } from '../../layout/head/head';
+import { CustomHead, MetaConfig } from '../../layout/head/head';
 import { formatApiResponse } from '../../utils/format-response';
 
 const ProjectView = ({project}) => {
     const p: Project = JSON.parse(project)
+    const metaConfig: MetaConfig = {
+        title: `${p.name} | ${p.projectType} | Stephane Dondyas`,
+        description: "Welcome to my portfolio ! I'm Stephane Dondyas a Fullstack developper based in Wilhelmshaven, Germany. Here I would like to introduce myself, and show you how can I help you with your next web project!",
+        image: p.artworkUrl
+      }
     return (
         <>
-            <CustomHead title={`${p.name} | ${p.projectType} | Stephane Dondyas`}></CustomHead>
+            <CustomHead metaConfig={metaConfig}></CustomHead>
             <main role="main">
             <article className="container">
                 <header>

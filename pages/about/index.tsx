@@ -1,10 +1,15 @@
 import { CardUser } from '../../components/cards/cards';
-import { CustomHead } from '../../layout/head/head'
+import { CustomHead, MetaConfig } from '../../layout/head/head'
 
 const About = () => {
+    const metaConfig: MetaConfig = {
+        title: "About me | Stephane Dondyas",
+        description: "I'm a Self taught Fullstack Javascript developper based in Wilhelmshaven, Germany. I can help you with your web project, from first design to production deployment",
+        image: "/images/avatar.jpg"
+    }
     return (
         <>
-        <CustomHead title="My journey as Web Developper"></CustomHead>
+        <CustomHead metaConfig={metaConfig}></CustomHead>
         <main role="main">
             <section className="container">
                 <div className="row">

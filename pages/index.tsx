@@ -1,16 +1,21 @@
 import { GetServerSideProps } from 'next';
 import React from 'react';
 import { Card, CardPlain } from '../components/cards/cards';
-import { CustomHead } from '../layout/head/head';
+import { CustomHead, MetaConfig } from '../layout/head/head';
 import styles from '../styles/Home.module.scss';
 import axios from 'axios';
 import { formatApiResponse } from '../utils/format-response';
 
 const Home = ({projects}) => {
   projects = JSON.parse(projects)
+  const metaConfig: MetaConfig = {
+    title: "Hi, I'm Stephane Dondyas, a Fullstack web developer",
+    description: "Welcome to my portfolio ! I'm Stephane Dondyas a Fullstack developper based in Wilhelmshaven, Germany. Here I would like to introduce myself, and show you how can I help you with your next web project!",
+    image: "/images/avatar.jpg"
+  }
   return (
     <>
-      <CustomHead title="Hi, I'm Stephane Dondyas, a Frontend Developper"></CustomHead>
+      <CustomHead metaConfig={metaConfig}></CustomHead>
 
       <main>
         <section className="container">

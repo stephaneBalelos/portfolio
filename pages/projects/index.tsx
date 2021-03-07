@@ -1,4 +1,4 @@
-import { CustomHead } from "../../layout/head/head"
+import { CustomHead, MetaConfig } from "../../layout/head/head"
 import { Card, CardPlain } from "../../components/cards/cards";
 import { GetServerSideProps } from "next";
 import axios from "axios";
@@ -6,9 +6,15 @@ import { formatApiResponse } from "../../utils/format-response";
 
 const Projects = ({projects}) => {
     projects = JSON.parse(projects)
+    console.log(projects)
+    const metaConfig: MetaConfig = {
+        title: "A few projects I have been working on.",
+        description: "Here are some projects I have been working on.",
+        image: "/images/avatar.jpg"
+    }
     return (
         <>
-            <CustomHead title="Projects"></CustomHead>
+            <CustomHead metaConfig={metaConfig}></CustomHead>
             <main role="main">
                 <section className="container">
                     <h1>My projects</h1>
