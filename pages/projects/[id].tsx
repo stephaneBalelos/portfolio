@@ -75,8 +75,8 @@ const ProjectView = ({project}) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const {id} = context.query
-    const res = await axios.get(process.env.API_URL + `/projects/${id}`)
-    const project = JSON.stringify(formatApiResponse(res.data))
+    const res = await axios.get(process.env.API_URL + `/projects?slug=${id}`)
+    const project = JSON.stringify(formatApiResponse(res.data[0]))
     return {
         props: {
             project

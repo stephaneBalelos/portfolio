@@ -5,7 +5,7 @@ export const Card = ({project}) => {
     const p: Project = project
     return (
         <div className="card">
-            <LINK href={`/projects/${p.id}`}>
+            <LINK href={`/projects/${p.slug}`}>
                 <img className="card-img-top" src={`${p.artworkUrl}`} alt="Card image cap" />
             </LINK>
             <div className="card-body">

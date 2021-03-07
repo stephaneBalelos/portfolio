@@ -10,6 +10,7 @@ export const formatApiResponse = (res) => {
         repoUrl: res.repo_url,
         artworkUrl: process.env.API_URL + res.artwork.url,
         clientName: res.client_name,
+        slug: res.slug,
         screenshotsUrl: res.screenshots.map((s) => process.env.API_URL + s.url),
         liveViewUrl: res.live_view_url
     }
