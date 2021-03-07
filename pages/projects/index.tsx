@@ -9,7 +9,7 @@ const Projects = ({projects}) => {
     const metaConfig: MetaConfig = {
         title: "A few projects I have been working on.",
         description: "Here are some projects I have been working on.",
-        image: "/images/me-seo.jpeg"
+        image: "https://stephanedondyas.dev/images/me-seo.jpeg"
     }
     return (
         <>

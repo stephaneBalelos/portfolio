@@ -5,7 +5,7 @@ const About = () => {
     const metaConfig: MetaConfig = {
         title: "About me | Stephane Dondyas",
         description: "I'm a Self taught Fullstack Javascript developper based in Wilhelmshaven, Germany. I can help you with your web project, from first design to production deployment",
-        image: "/images/me-seo.jpeg"
+        image: "https://stephanedondyas.dev/images/me-seo.jpeg"
     }
     return (
         <>

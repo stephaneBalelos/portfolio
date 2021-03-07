@@ -11,7 +11,7 @@ const Home = ({projects}) => {
   const metaConfig: MetaConfig = {
     title: "Hi, I'm Stephane Dondyas, a Fullstack web developer",
     description: "Welcome to my portfolio ! I'm Stephane Dondyas a Fullstack developper based in Wilhelmshaven, Germany. Here I would like to introduce myself, and show you how can I help you with your next web project!",
-    image: "/images/me-seo.jpeg"
+    image: "https://stephanedondyas.dev/images/me-seo.jpeg"
   }
   return (
     <>
