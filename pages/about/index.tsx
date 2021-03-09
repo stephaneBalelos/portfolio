@@ -1,11 +1,40 @@
-import { CardUser } from '../../components/cards/cards';
+import axios from 'axios';
+import { GetServerSideProps } from 'next';
+import ReactMarkdown from 'react-markdown';
 import { CustomHead, MetaConfig } from '../../layout/head/head'
+import { useForm } from "react-hook-form";
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
 
-const About = () => {
+type ContactForm = {
+    full_name: string
+    contact_mail: string
+    message: string
+}
+
+const About = ({about}) => {
+    const pageData = JSON.parse(about)
+    const {article, description, seo_img } = pageData
     const metaConfig: MetaConfig = {
         title: "About me | Stephane Dondyas",
-        description: "I'm a Self taught Fullstack Javascript developper based in Wilhelmshaven, Germany. I can help you with your web project, from first design to production deployment",
-        image: "https://stephanedondyas.dev/images/me-seo.jpeg"
+        description: description,
+        image: seo_img
+    }
+
+    const [postState, setPostState] = useState(null)
+
+    const { register, handleSubmit, reset, watch, errors } = useForm<ContactForm>({mode: 'onChange'});
+
+
+    const handleFormSubmit = async (data) => {
+        reset({...data})
+        const res = await axios.post('https://api.stephanedondyas.dev/contacts', data)
+        if (res.status === 200) {
+            setPostState('success')
+        } else {
+            setPostState('error')
+        }
+        console.log(res)
     }
     return (
         <>
@@ -21,8 +50,7 @@ const About = () => {
                         <p>Frontend Developper</p>
 
                         <p>
-                            Frontend developper based in Wilhelmshaven, Germany. <br/> I'm a little pointy about code quality, and always put scalability at first place in my projects,
-                            because stonger is the base, bigger are growth chances.
+                            {description}
                         </p>
 
                         <p>
@@ -50,29 +78,14 @@ const About = () => {
                     <h1>My journey in Web developpment</h1>
                     <p className="text-muted">Biomedical engineering Student the day, Web developper at night.</p>
                 </header>
-                <p className="mt-4">
-                My most recent work stint was with Sprinklr where I designed for some of its core offerings like Social Media Engagement, Social Advertising, Care support and Analytics for big brands with a global reach that helped integrate all their social marketing needs under one roof. Having led the design team for four years in this young, rapidly growing enterprise startup environment - taught me how to balance business goals and engineering constraints as I unrelentingly advocated for the user.
-                </p>
-                <img src="/images/image-about.jpg" className="img-fluid rounded" alt="..."></img>
-                <p className="mt-4">
-                My most recent work stint was with Sprinklr where I designed for some of its core offerings like Social Media Engagement, Social Advertising, Care support and Analytics for big brands with a global reach that helped integrate all their social marketing needs under one roof. Having led the design team for four years in this young, rapidly growing enterprise startup environment - taught me how to balance business goals and engineering constraints as I unrelentingly advocated for the user.
-                </p>
+                <div className="article-content">
+                    <ReactMarkdown>
+                        {article}
+                    </ReactMarkdown>
+                </div>
                 <hr/>
             </article>
-            {/* <section className="container pt-2">
-                <h1 className="text-center">My colabs</h1>
-                <div className="row mt-3">
-                    <div className="col-md-4">
-                        <CardUser></CardUser>
-                    </div>
-                    <div className="col-md-4">
-                        <CardUser></CardUser>
-                    </div>
-                    <div className="col-md-4">
-                        <CardUser></CardUser>
-                    </div>
-                </div>
-            </section> */}
+
             <section className="bg-blue">
                 <div className="container">
                     <div className="row">
@@ -92,23 +105,42 @@ const About = () => {
                             </ul>
                         </div>
                         <div className="col-md-6">
-                            <form action="">
+                            <AnimatePresence>
+                                {postState === 'success' && (
+                                    <motion.div initial={{opacity: 0, y: -20}} animate={{opacity: 1, y: 0}} className="alert alert-success" role="alert">
+                                        Thanks for your message! I'll get in touch with you very soon !
+                                    </motion.div>
+                                )}
+                                {postState === 'error' && (
+                                    <motion.div initial={{opacity: 0, y: -20}} animate={{opacity: 1, y: 0}} className="alert alert-error" role="alert">
+                                        An error occured while submiting the form. Please try again.
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                            <form onSubmit={handleSubmit(handleFormSubmit)}>
                                 <div className="form-group">
                                     <label htmlFor="fullname">Name</label>
-                                    <input type="text" className="form-control" id="fullname" placeholder="Your full name" />
+                                    <input ref={register({required: true})} name="full_name" aria-describedby="nameHelp" type="text" className="form-control" id="fullname" placeholder="Your full name" />
+                                    {errors.full_name && 
+                                    (<small id="nameHelp" className="form-text text-danger">
+                                        What is your name?
+                                    </small>)}
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="email">Email address</label>
-                                    <input type="email" className="form-control" id="email" placeholder="name@example.com" />
+                                    <input ref={register({required: true})} name="contact_mail" type="email" className="form-control" id="email" placeholder="name@example.com" />
+                                    {errors.contact_mail && 
+                                    (<small id="nameHelp" className="form-text text-danger">
+                                        How can I contact you?
+                                    </small>)}
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="message">Your Message</label>
-                                    <textarea className="form-control" defaultValue="Your message" id="message" rows={3}></textarea>
+                                    <textarea ref={register({required: true})} placeholder="Your message" name="message" className="form-control" id="message" rows={3} />
+                                    {errors.message && (<small id="nameHelp" className="form-text text-danger">Tell me how can I help you !</small>)}
                                 </div>
 
-                                <button className="btn btn-primary btn-lg float-right">
-                                    Email me
-                                </button>
+                                <input type="submit" value="Email me" className="btn btn-primary btn-lg float-right" />
                             </form>
                         </div>
                     </div>
@@ -117,6 +149,15 @@ const About = () => {
         </main>
         </>
     )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+    const content = await axios.get(`${process.env.API_URL}/about-me`)
+    return {
+        props: {
+            about: JSON.stringify(content.data)
+        }
+    }
 }
 
 export default About
