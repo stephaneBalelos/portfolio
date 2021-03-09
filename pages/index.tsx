@@ -25,8 +25,8 @@ const Home = ({projects}) => {
               <h4>Hey,</h4>
               <h1 className="mb-5">I'm <span className="text-primary">Stephane Dondyas</span> <br/> a Fullstack Javascript Dev</h1>
               <p>
-                Self Taught web developper dev, based in Wilhelmshaven, Germany. <br/>
-                My motto: "With code, there is always a way to reach your goal."
+              Self Taught Web developer dev, based in Wilhelmshaven, Germany. <br/>
+              My motto: "With code, there is always a way to reach your goal."
               </p>
               <div className="d-flex align-items-center mt-3">
                 <p className="m-0">Follow me:</p>
@@ -41,11 +41,11 @@ const Home = ({projects}) => {
                 </a>
               </div>
               <div className="mt-5">
-                <button type="button" className="btn btn-lg btn-primary"><i className="far fa-envelope"></i> Mail me</button>
+                <a href="mailto:hello@stephanedondyas.dev" className="btn btn-lg btn-primary"><i className="far fa-envelope"></i> Mail me</a>
               </div>
             </div>
             <div className={'col-sm-6 d-none d-sm-block ' + styles.header_img}>
-              <img className="img-fluid" src="/images/header-img.svg" alt=""/>
+              <img className="img-fluid" src="/images/header-img.svg" alt="Stephane Dondyas"/>
             </div>
           </div>
         </section>
@@ -57,14 +57,14 @@ const Home = ({projects}) => {
               </div>
               <div className="my-4 col-md-7 d-flex flex-column justify-content-center">
                 <h1>What can I do for you?</h1>
-                <p className="text-muted">Here are my skills</p>
+                <p className="text-muted">Here are my skills.</p>
                 <ul className="list-unstyled">
                   <li>
-                    <h4 className="m-0">I Design your website</h4>
+                    <h4 className="m-0">I can Design your website</h4>
                     <p>I can prototype and Design your Frontends using Figma</p>
                   </li>
                   <li>
-                    <h4 className="m-0">I code your designs</h4>
+                    <h4 className="m-0">I can code your designs</h4>
                     <p>I can build your Frontend with NextJs, Angular 2+, or without frameworks.</p>
                   </li>
                   <li>
@@ -82,9 +82,9 @@ const Home = ({projects}) => {
               <h1>Recent projects</h1>
               <p>Some projects I have been working on.</p>
             </div>
-            <button className="btn btn-primary d-none d-md-block">
+            <a href="/projects" className="btn btn-primary d-none d-md-block">
               See more
-            </button>
+            </a>
           </div>
           <div className="row mt-5">
             {
@@ -103,7 +103,7 @@ const Home = ({projects}) => {
                 <div className="card-body mx-2 my-2 mx-md-5 mx-md-5">
                     <div className="row">
                       <div className="col-md-4">
-                        <h1>Interested working with me?</h1>
+                        <h1>Interested in working with me?</h1>
                       </div>
                       <div className="col-md-8 my-auto">
                         <div className="row">
@@ -113,9 +113,9 @@ const Home = ({projects}) => {
                           </a>
                           </div>
                           <div className="col-md-7 mt-3">
-                          <button className="btn btn-block btn-lg btn-outline-secondary">
+                          <a href="/projects" className="btn btn-block btn-lg btn-outline-secondary">
                             See More Projects
-                          </button>
+                          </a>
                           </div>
                         </div>
                       </div>
@@ -166,7 +166,7 @@ const Home = ({projects}) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const res = await axios.get(process.env.API_URL + '/projects?_limit=2')
+  const res = await axios.get(process.env.API_URL + '/projects?_limit=2&_sort=begin_date:DESC')
   const projects = JSON.stringify(res.data.map((res) => formatApiResponse(res)))
   return {
     props: {

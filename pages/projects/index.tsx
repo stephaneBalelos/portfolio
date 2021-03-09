@@ -8,7 +8,7 @@ const Projects = ({projects}) => {
     projects = JSON.parse(projects)
     const metaConfig: MetaConfig = {
         title: "A few projects I have been working on.",
-        description: "Here are some projects I have been working on.",
+        description: "Here are some projects I have been working on, some of my personnals projects.",
         image: "https://stephanedondyas.dev/images/me-seo.jpeg"
     }
     return (
@@ -38,23 +38,23 @@ const Projects = ({projects}) => {
                                         <h1>Interested working with me?</h1>
                                     </div>
                                     <div className="col-md-6">
-                                        <button className="btn btn-lg btn-secondary">
+                                        <a href="mailto:hello@stephanedondyas.dev" className="btn btn-lg btn-secondary">
                                             <i className="far fa-envelope"></i> Email me
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </CardPlain>
                         </div>
                     </div>
-                    </section>
+                </section>
             </main>
         </>
     )
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-    const res = await axios.get(process.env.API_URL + '/projects')
+    const res = await axios.get(process.env.API_URL + '/projects?_sort=begin_date:DESC')
     const projects = JSON.stringify(res.data.map((res) => formatApiResponse(res)))
 
     return {
