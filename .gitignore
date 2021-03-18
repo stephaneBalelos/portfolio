@@ -16,7 +16,7 @@
 /build
 
 /public/me
-webhooks.js
+/webhooks/*
 
 # misc
 .DS_Store
