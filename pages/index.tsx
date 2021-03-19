@@ -9,7 +9,7 @@ import { formatApiResponse } from '../utils/format-response';
 const Home = ({projects}) => {
   projects = JSON.parse(projects)
   const metaConfig: MetaConfig = {
-    title: "Hi, I'm Stephane Dondyas, a Fullstack web developer",
+    title: "Hi, I'm Stephane Dondyas, a Fullstack Web Developer",
     description: "Welcome to my portfolio ! I'm Stephane Dondyas a Fullstack developper based in Wilhelmshaven, Germany. Here I would like to introduce myself, and show you how can I help you with your next web project!",
     image: "https://stephanedondyas.dev/images/me-seo.jpeg"
   }
@@ -23,7 +23,7 @@ const Home = ({projects}) => {
             <img className={styles.pattern} src="/images/dot-pattern.svg" height="180" width="245" alt=""/>
             <div className="col-sm-6 d-flex flex-column justify-content-center">
               <h4>Hey,</h4>
-              <h1 className="mb-5">I'm <span className="text-primary">Stephane Dondyas</span> <br/> a Fullstack Javascript Dev</h1>
+              <h1 className="mb-5">I'm <span className="text-primary">Stephane Dondyas,</span> <br/> a Fullstack Javascript Dev</h1>
               <p>
               Self Taught Web developer dev, based in Wilhelmshaven, Germany. <br/>
               My motto: "With code, there is always a way to reach your goal."
